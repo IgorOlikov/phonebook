@@ -1,0 +1,10 @@
+{
+    "name": "igorolikov/phonebook",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Phonebook\\": "src/"
+        }
+    },
+    "require": {}
+}
