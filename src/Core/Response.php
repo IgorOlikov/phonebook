@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Phonebook\Core;
 class Response
 {
     public function setStatusCode(int $code)
