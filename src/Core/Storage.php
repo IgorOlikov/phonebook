@@ -74,6 +74,9 @@ class Storage
         if (!isset($contactFields['name']) || !isset($contactFields['number'])) {
             (new Response())->setStatusCode(404);
             exit();
+        } elseif ( $contactFields['name'] === '' || $contactFields['number'] === '') {
+            (new Response())->setStatusCode(404);
+            exit();
         }
    }
 

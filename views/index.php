@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>PhoneBook</title>
-</head>
 <body>
 
 <div class="flex flex-col items-center justify center pt-64">

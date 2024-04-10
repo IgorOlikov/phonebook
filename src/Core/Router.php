@@ -66,21 +66,10 @@ class Router
             $this->response->setStatusCode(404);
         }
 
-        //dd($method);
-
 
         //call controller func
         return call_user_func($callback, $this->request, $this->response, $routeParam);
     }
 
 
-
-    public function renderView($view, array $params): bool|string
-    {
-        ob_start();
-
-        include_once App::$ROOT_DIR."/views/$view.php";
-
-        return ob_get_clean();
-    }
 }
