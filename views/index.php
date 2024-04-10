@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="flex flex-col items-center justify center">
+<div class="flex flex-col items-center justify center pt-64">
     <h1>Контакты</h1>
     <div>
         <a href="/contact-create">
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="flex items-center justify-center w-full py-54 max-h-screen">
+<div class="flex items-center justify-center w-full max-h-screen">
     <div class="flex-col">
 
     <?php foreach ($params as $id => $contact): ?>
