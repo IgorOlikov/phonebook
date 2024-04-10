@@ -66,6 +66,9 @@ class Router
             $this->response->setStatusCode(404);
         }
 
+        //dd($method);
+
+
         //call controller func
         return call_user_func($callback, $this->request, $this->response, $routeParam);
     }

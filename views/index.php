@@ -10,6 +10,13 @@
         <h1><?= $id ?></h1>
         <h1><?= $contact['name'] ?></h1>
         <h1><?= $contact['number'] ?></h1>
+        <a href="/contact/<?= $id ?>">
+            <button>Show</button>
+        </a>
+        <form action="/contact/<?= $id ?>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete</button>
+        </form>
      <?php endforeach; ?>
 </body>
 </html>

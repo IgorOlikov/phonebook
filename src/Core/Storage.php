@@ -26,13 +26,13 @@ class Storage
        return $contacts[$contactId];
    }
 
-   public function createContact(array $contactInfo)
+   public function createContact(array $contactInfo): void
    {
        $contacts = $this->getContactsArrayFromJson();
 
        $contacts[] = $contactInfo;
 
-       //validate fields
+       $this->validateInput($contactInfo);
 
        $this->overwriteJsonFile($contacts);
    }
@@ -55,14 +55,26 @@ class Storage
 
        $contacts = file_get_contents($storagePath, true);
 
+       if ($contacts === '') {
+           return [];
+       }
+
        return json_decode($contacts, true);
    }
 
-   public function overwriteJsonFile(array $contacts)
+   public function overwriteJsonFile(array $contacts): void
    {
        $jsonContacts = json_encode($contacts);
 
        $status = file_put_contents($this->storagePath, $jsonContacts);
+   }
+
+   public function validateInput(array $contactFields): void
+   {
+        if (!isset($contactFields['name']) || !isset($contactFields['number'])) {
+            (new Response())->setStatusCode(404);
+            exit();
+        }
    }
 
 

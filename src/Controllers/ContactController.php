@@ -29,7 +29,7 @@ class ContactController extends Controller
         return $this->render('create-contact');
     }
 
-    public function storeContact(Request $request, Response $response)
+    public function storeContact(Request $request, Response $response): void
     {
        $contactInfo = $request->getBody();
 
@@ -38,7 +38,7 @@ class ContactController extends Controller
        $response->redirect('/');
     }
 
-    public function deleteContact(Request $request, Response $response, $contactId)
+    public function deleteContact(Request $request, Response $response, $contactId): void
     {
         $this->storage->deleteContactById($contactId);
 
