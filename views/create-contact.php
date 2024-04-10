@@ -5,9 +5,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create Contact</title>
 </head>
 <body>
-    <h1> Create contact</h1>
+    <div class="flex flex-col items-center justify-center py-64">
+    <h1>Создать контакт</h1>
+    <form action="/contact-store" method="POST" class="max-w-sm mx-auto">
+        <div class="mb-5">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Имя</label>
+            <input type="text" name="name" class="border-4"/>
+        </div>
+        <div class="mb-5">
+            <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Телефон</label>
+            <input type="text" name="number"  class="border-4"/>
+        </div>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Создать контакт</button>
+    </form>
+    </div>
 </body>
 </html>
