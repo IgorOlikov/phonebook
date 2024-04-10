@@ -2,49 +2,47 @@
 
 namespace Phonebook\Controllers;
 
-use Phonebook\Core\Application\App;
 use Phonebook\Core\Controller;
 use Phonebook\Core\Request;
 use Phonebook\Core\Response;
-use Phonebook\Core\Storage;
+
 
 class ContactController extends Controller
 {
-    private Storage $storage;
 
-    public function __construct()
-    {
-        $this->storage = new Storage();
-    }
-
-    public function getContacts(Request $request)
+    public function getContacts(Request $request): bool|string
     {
         $contacts = $this->storage->getAllContacts();
 
-        return $this->render('hello', $contacts);
+        return $this->render('index', $contacts);
     }
 
-    public function showContact(Request $request, Response $response, $routeParamId)
+    public function showContact(Request $request, Response $response, $contactId): bool|string
     {
-        $id  = $request->getRouteParam();
+        $contact = $this->storage->getContactById($contactId);
 
-        dd($id);
-        echo 'showContact' . $routeParamId;
+        return $this->render('show-contact', $contact);
     }
 
-    public function createContact()
+    public function createContact(): bool|string
     {
-        //return $this->render('createContactView');
+        return $this->render('create-contact');
     }
 
-    public function storeContact()
+    public function storeContact(Request $request, Response $response)
     {
-        //
+       $contactInfo = $request->getBody();
+
+       $this->storage->createContact($contactInfo);
+
+       $response->redirect('/');
     }
 
-    public function deleteContact()
+    public function deleteContact(Request $request, Response $response, $contactId)
     {
-        //
+        $this->storage->deleteContactById($contactId);
+
+        $response->redirect('/');
     }
 
 }

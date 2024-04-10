@@ -18,7 +18,7 @@ $app->router->get('/contact-create', [ContactController::class, 'createContact']
 
 $app->router->post('/contact-store', [ContactController::class, 'storeContact']);
 
-$app->router->post('/contact/{id}', [ContactController::class, 'deleteContact']); // delete DELETE
+$app->router->delete('/contact/{id}', [ContactController::class, 'deleteContact']); // delete DELETE
 
 
 

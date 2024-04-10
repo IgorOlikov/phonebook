@@ -5,9 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-
+    <h1>Contacts</h1>
     <?php foreach ($params as $id => $contact): ?>
-        <h1>Contacts</h1>
         <h1><?= $id ?></h1>
         <h1><?= $contact['name'] ?></h1>
         <h1><?= $contact['number'] ?></h1>

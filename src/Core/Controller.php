@@ -6,6 +6,12 @@ use Phonebook\Core\Application\App;
 
 class Controller
 {
+    public Storage $storage;
+
+    public function __construct()
+    {
+        $this->storage = new Storage();
+    }
 
     public function render($view,$params = []): bool|string
     {

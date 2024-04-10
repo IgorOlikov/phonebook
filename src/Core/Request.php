@@ -49,6 +49,11 @@ class Request
         return $this->method() === 'post';
     }
 
+    public function isDelete(): bool
+    {
+        return $this->method() === 'delete';
+    }
+
 
     public function getBody(): array
     {
