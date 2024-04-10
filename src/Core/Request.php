@@ -36,7 +36,6 @@ class Request
 
     public function method(): string
     {
-
         if (isset($_REQUEST['_method']) && $_REQUEST['_method'] === 'DELETE') {
             return 'delete';
         }
