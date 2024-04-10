@@ -14,11 +14,11 @@ $app->router->get('/', [ContactController::class, 'getContacts']);
 
 $app->router->get('/contact/{id}',[ContactController::class, 'showContact']);
 
-$app->router->post('/contact-create', [ContactController::class, 'storeContact']);
+$app->router->get('/contact-create', [ContactController::class, 'createContact']);
+
+$app->router->post('/contact-store', [ContactController::class, 'storeContact']);
 
 $app->router->post('/contact/{id}', [ContactController::class, 'deleteContact']); // delete DELETE
-
-
 
 
 

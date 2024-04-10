@@ -13,7 +13,6 @@ class Request
 
         $position = strpos($path,'?');
 
-
         //get id replace return param id
         $str = trim($path,'/');
 
